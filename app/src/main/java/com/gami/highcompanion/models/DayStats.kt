@@ -3,13 +3,13 @@ package com.gami.highcompanion.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
+import java.time.LocalDate
 
 @Entity(tableName = "days_table")
 data class DayStats(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey()
     @ColumnInfo(name = "sql_date")
-    val sqlDate: Date,
+    val sqlDate: LocalDate,
     @ColumnInfo(name = "smoked_joints")
     val smokedJoints: Int,
     @ColumnInfo(name = "spent_amount")
