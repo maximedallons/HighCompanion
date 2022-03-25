@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_stats"
+        android:enabled="true"
+        android:icon="@drawable/stats_default"
+        android:title="Stats"/>
+    <item
+        android:id="@+id/menu_add"
+        android:enabled="true"
+        android:icon="@drawable/add_default"
+        android:title="Add"/>
+    <item
+        android:id="@+id/menu_settings"
+        android:enabled="true"
+        android:icon="@drawable/settings_default"
+        android:title="Settings"/>
+</menu>
