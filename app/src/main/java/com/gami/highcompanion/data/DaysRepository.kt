@@ -28,7 +28,7 @@ class DaysRepository {
     val getWeeklySmokedJoints: LiveData<Int>? = daysDao?.getWeeklySmokedJoints()
     val getMonthlySmokedJoints: LiveData<Int>? = daysDao?.getMonthlySmokedJoints()
 
-    val getDailySpentAmount: LiveData<Float>? = daysDao?.getDailySpentAmount()
-    val getWeeklySpentAmount: LiveData<Float>? = daysDao?.getWeeklySpentAmount()
-    val getMonthlySpentAmount: LiveData<Float>? = daysDao?.getMonthlySpentAmount()
+    val getDailySpentAmount: LiveData<Double>? = daysDao?.getDailySpentAmount()
+    val getWeeklySpentAmount: LiveData<Double>? = daysDao?.getWeeklySpentAmount()
+    val getMonthlySpentAmount: LiveData<Double>? = daysDao?.getMonthlySpentAmount()
 }

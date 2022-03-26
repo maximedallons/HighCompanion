@@ -34,13 +34,13 @@ class DaysViewModel : ViewModel() {
         return repository.getMonthlySmokedJoints
     }
 
-    fun getDailySpentAmount(): LiveData<Float>? {
+    fun getDailySpentAmount(): LiveData<Double>? {
         return repository.getDailySpentAmount
     }
-    fun getWeeklySpentAmount(): LiveData<Float>? {
+    fun getWeeklySpentAmount(): LiveData<Double>? {
         return repository.getWeeklySpentAmount
     }
-    fun getMonthlySpentAmount(): LiveData<Float>? {
+    fun getMonthlySpentAmount(): LiveData<Double>? {
         return repository.getMonthlySpentAmount
     }
 }

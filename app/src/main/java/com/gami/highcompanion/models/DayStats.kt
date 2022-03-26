@@ -13,6 +13,6 @@ data class DayStats(
     @ColumnInfo(name = "smoked_joints")
     val smokedJoints: Int,
     @ColumnInfo(name = "spent_amount")
-    val spentAmount: Float
+    val spentAmount: Double
 ) {
 }

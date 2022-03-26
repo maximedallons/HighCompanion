@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HighCompanion">
         <activity
+            android:name=".views.AddActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.StatisticsActivity"
             android:exported="true">
             <intent-filter>
