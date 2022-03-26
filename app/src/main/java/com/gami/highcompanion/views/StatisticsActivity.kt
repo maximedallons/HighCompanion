@@ -15,15 +15,20 @@ class StatisticsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStatisticsBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-
         daysViewModel = ViewModelProvider(this).get(DaysViewModel::class.java)
-        //daysViewModel.getDailySmokedJoints()?.observe(this) { smokedJoints -> adapter.setData(smokedJoints) }
+        val view = binding.root
 
-        binding.btnDay.isSelected = true
+        setContentView(view)
+        initViewAttributes()
         navigationHandler()
         rangeSelectorHandler()
+    }
+
+    private fun initViewAttributes(){
+        binding.btnDay.isSelected = true
+        daysViewModel.getMonthlySmokedJoints()?.observe(this@StatisticsActivity) {
+                smokedJoints -> binding.test.text = smokedJoints.toString()
+        }
     }
 
     private fun rangeSelectorHandler(){
@@ -31,16 +36,25 @@ class StatisticsActivity : AppCompatActivity() {
             binding.btnDay.isSelected = true
             binding.btnWeek.isSelected = false
             binding.btnMonth.isSelected = false
+            daysViewModel.getDailySmokedJoints()?.observe(this@StatisticsActivity) {
+                    smokedJoints -> binding.test.text = smokedJoints.toString()
+            }
         }
         binding.btnWeek.setOnClickListener {
             binding.btnDay.isSelected = false
             binding.btnWeek.isSelected = true
             binding.btnMonth.isSelected = false
+            daysViewModel.getWeeklySmokedJoints()?.observe(this@StatisticsActivity) {
+                    smokedJoints -> binding.test.text = smokedJoints.toString()
+            }
         }
         binding.btnMonth.setOnClickListener {
             binding.btnDay.isSelected = false
             binding.btnWeek.isSelected = false
             binding.btnMonth.isSelected = true
+            daysViewModel.getMonthlySmokedJoints()?.observe(this@StatisticsActivity) {
+                    smokedJoints -> binding.test.text = smokedJoints.toString()
+            }
         }
     }
 
