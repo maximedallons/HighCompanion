@@ -8,29 +8,17 @@ import com.gami.highcompanion.data.DaysRepository
 import com.gami.highcompanion.models.DayStats
 import kotlinx.coroutines.launch
 
-class DaysViewModel : ViewModel() {
+class StatsViewModel : ViewModel() {
 
     private val repository: DaysRepository = DaysRepository.getInstance()
 
-    fun addDay(day: DayStats) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.addCollection(day)
-        }
-    }
-
-    fun updateCollection(day: DayStats) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.updateCollection(day)
-        }
-    }
-
-    fun getDailySmokedJoints(): LiveData<Int>? {
+    fun getDailySmokedJoints(): LiveData<Double>? {
         return repository.getDailySmokedJoints
     }
-    fun getWeeklySmokedJoints(): LiveData<Int>? {
+    fun getWeeklySmokedJoints(): LiveData<Double>? {
         return repository.getWeeklySmokedJoints
     }
-    fun getMonthlySmokedJoints(): LiveData<Int>? {
+    fun getMonthlySmokedJoints(): LiveData<Double>? {
         return repository.getMonthlySmokedJoints
     }
 

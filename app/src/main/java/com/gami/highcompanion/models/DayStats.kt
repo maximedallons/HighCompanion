@@ -11,7 +11,7 @@ data class DayStats(
     @ColumnInfo(name = "sql_date")
     val sqlDate: LocalDate,
     @ColumnInfo(name = "smoked_joints")
-    val smokedJoints: Int,
+    val smokedJoints: Double,
     @ColumnInfo(name = "spent_amount")
     val spentAmount: Double
 ) {

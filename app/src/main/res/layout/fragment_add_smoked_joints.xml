@@ -8,21 +8,37 @@
     android:orientation="vertical"
     android:background="@color/background"
     android:gravity="center">
-    <TextView
-        android:id="@+id/test_text"
+    <com.lukelorusso.verticalseekbar.VerticalSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:vsb_progress="100"
+        app:vsb_bar_background="@drawable/joint"
+        app:vsb_bar_progress_gradient_start="@android:color/transparent"
+        app:vsb_bar_progress_gradient_end="@android:color/transparent"
+        app:vsb_thumb_container_tint="@android:color/transparent"
+        app:vsb_thumb_placeholder_src="@drawable/flame" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:text="0"/>
-    <Button
-        android:id="@+id/test_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/selected_item"
-        android:text="Test">
-    </Button>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/add_btn"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:backgroundTint="@color/selected_item"
+            android:text="Add"/>
+        <Button
+            android:id="@+id/remove_btn"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="Remove"/>
+    </LinearLayout>
 
 </LinearLayout>

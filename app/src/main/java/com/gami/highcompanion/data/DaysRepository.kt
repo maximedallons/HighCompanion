@@ -16,17 +16,25 @@ class DaysRepository {
     }
     private val daysDao = DaysDatabase.getInstance()?.daysDao()
 
-    fun addCollection(day: DayStats) {
+    fun addDay(day: DayStats) {
         daysDao?.addDay(day)
     }
 
-    fun updateCollection(day: DayStats) {
-        daysDao?.updateDay(day)
+    fun addSmokedJoint(smokedJoints: Double) {
+        daysDao?.addSmokedJoint(smokedJoints)
+    }
+    fun substractSmokedJoint(smokedJoints: Double) {
+        daysDao?.substractSmokedJoint(smokedJoints)
+    }
+    fun resetSmokedJoints(){
+        daysDao?.resetSmokedJoints()
     }
 
-    val getDailySmokedJoints: LiveData<Int>? = daysDao?.getDailySmokedJoints()
-    val getWeeklySmokedJoints: LiveData<Int>? = daysDao?.getWeeklySmokedJoints()
-    val getMonthlySmokedJoints: LiveData<Int>? = daysDao?.getMonthlySmokedJoints()
+    val getDayStats: LiveData<DayStats>? = daysDao?.getDay()
+
+    val getDailySmokedJoints: LiveData<Double>? = daysDao?.getDailySmokedJoints()
+    val getWeeklySmokedJoints: LiveData<Double>? = daysDao?.getWeeklySmokedJoints()
+    val getMonthlySmokedJoints: LiveData<Double>? = daysDao?.getMonthlySmokedJoints()
 
     val getDailySpentAmount: LiveData<Double>? = daysDao?.getDailySpentAmount()
     val getWeeklySpentAmount: LiveData<Double>? = daysDao?.getWeeklySpentAmount()

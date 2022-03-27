@@ -6,16 +6,16 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.gami.highcompanion.R
 import com.gami.highcompanion.databinding.ActivityStatisticsBinding
-import com.gami.highcompanion.viewmodels.DaysViewModel
+import com.gami.highcompanion.viewmodels.StatsViewModel
 
 class StatisticsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStatisticsBinding
-    private lateinit var daysViewModel: DaysViewModel
+    private lateinit var statsViewModel: StatsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStatisticsBinding.inflate(layoutInflater)
-        daysViewModel = ViewModelProvider(this).get(DaysViewModel::class.java)
+        statsViewModel = ViewModelProvider(this).get(StatsViewModel::class.java)
         val view = binding.root
 
         setContentView(view)
@@ -27,10 +27,10 @@ class StatisticsActivity : AppCompatActivity() {
     private fun initViewAttributes(){
         binding.btnDay.isSelected = true
         binding.bottomNavigation.selectedItemId = R.id.menu_stats
-        daysViewModel.getDailySmokedJoints()?.observe(this@StatisticsActivity) {
+        statsViewModel.getDailySmokedJoints()?.observe(this@StatisticsActivity) {
                 smokedJoints ->  if(smokedJoints == null) binding.smokedJoints.text = 0.toString() else binding.smokedJoints.text = smokedJoints.toString()
         }
-        daysViewModel.getDailySpentAmount()?.observe(this@StatisticsActivity) {
+        statsViewModel.getDailySpentAmount()?.observe(this@StatisticsActivity) {
                 spentMoney -> if(spentMoney == null) binding.spentMoney.text = 0.toString() + "€" else binding.spentMoney.text = roundTo2Decimals(spentMoney).toString() + "€"
         }
     }
@@ -40,10 +40,10 @@ class StatisticsActivity : AppCompatActivity() {
             binding.btnDay.isSelected = true
             binding.btnWeek.isSelected = false
             binding.btnMonth.isSelected = false
-            daysViewModel.getDailySmokedJoints()?.observe(this@StatisticsActivity) {
+            statsViewModel.getDailySmokedJoints()?.observe(this@StatisticsActivity) {
                     smokedJoints ->  if(smokedJoints == null) binding.smokedJoints.text = 0.toString() else binding.smokedJoints.text = smokedJoints.toString()
             }
-            daysViewModel.getDailySpentAmount()?.observe(this@StatisticsActivity) {
+            statsViewModel.getDailySpentAmount()?.observe(this@StatisticsActivity) {
                     spentMoney -> if(spentMoney == null) binding.spentMoney.text = 0.toString() + "€" else binding.spentMoney.text = roundTo2Decimals(spentMoney).toString() + "€"
             }
         }
@@ -51,10 +51,10 @@ class StatisticsActivity : AppCompatActivity() {
             binding.btnDay.isSelected = false
             binding.btnWeek.isSelected = true
             binding.btnMonth.isSelected = false
-            daysViewModel.getWeeklySmokedJoints()?.observe(this@StatisticsActivity) {
+            statsViewModel.getWeeklySmokedJoints()?.observe(this@StatisticsActivity) {
                     smokedJoints ->  if(smokedJoints == null) binding.smokedJoints.text = 0.toString() else binding.smokedJoints.text = smokedJoints.toString()
             }
-            daysViewModel.getWeeklySpentAmount()?.observe(this@StatisticsActivity) {
+            statsViewModel.getWeeklySpentAmount()?.observe(this@StatisticsActivity) {
                     spentMoney -> if(spentMoney == null) binding.spentMoney.text = 0.toString() + "€" else binding.spentMoney.text = roundTo2Decimals(spentMoney).toString() + "€"
             }
         }
@@ -62,10 +62,10 @@ class StatisticsActivity : AppCompatActivity() {
             binding.btnDay.isSelected = false
             binding.btnWeek.isSelected = false
             binding.btnMonth.isSelected = true
-            daysViewModel.getMonthlySmokedJoints()?.observe(this@StatisticsActivity) {
+            statsViewModel.getMonthlySmokedJoints()?.observe(this@StatisticsActivity) {
                     smokedJoints ->  if(smokedJoints == null) binding.smokedJoints.text = 0.toString() else binding.smokedJoints.text = smokedJoints.toString()
             }
-            daysViewModel.getMonthlySpentAmount()?.observe(this@StatisticsActivity) {
+            statsViewModel.getMonthlySpentAmount()?.observe(this@StatisticsActivity) {
                     spentMoney -> if(spentMoney == null) binding.spentMoney.text = 0.toString() + "€" else binding.spentMoney.text = roundTo2Decimals(spentMoney).toString() + "€"
             }
         }
