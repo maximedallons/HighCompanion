@@ -31,13 +31,18 @@ interface DaysDAO {
     @Query("SELECT SUM(smoked_joints) FROM days_table WHERE sql_date > DATE('now','-1 month', '-1 day')")
     fun getMonthlySmokedJoints(): LiveData<Double>
 
+    @Query("UPDATE days_table SET spent_amount = spent_amount + :spentMoney WHERE sql_date = DATE('now')")
+    fun addSpentMoney(spentMoney: Double)
+
+    @Query("UPDATE days_table SET spent_amount = spent_amount - :spentMoney WHERE sql_date = DATE('now')")
+    fun substractSpentMoney(spentMoney: Double)
 
     @Query("SELECT spent_amount FROM days_table where sql_date = DATE('now')")
     fun getDailySpentAmount(): LiveData<Double>
 
-    @Query("SELECT SUM(spent_amount) FROM days_table WHERE sql_date >= DATE('now', 'weekday 0', '-7 days')  AND sql_date != DATE('now')  AND sql_date != DATE('now','-1 day')")
+    @Query("SELECT SUM(spent_amount) FROM days_table WHERE sql_date > DATE('now', '-8 day')")
     fun getWeeklySpentAmount(): LiveData<Double>
 
-    @Query("SELECT SUM(spent_amount) FROM days_table where strftime('%W',sql_date) != strftime('%W',date('now')) AND strftime('%Y',sql_date) = strftime('%Y',date('now')) AND  strftime('%m',sql_date) = strftime('%m',date('now')) AND sql_date != DATE('now', 'weekday 0', '-7 days')  AND sql_date != DATE('now')  AND sql_date != DATE('now','-1 day')")
+    @Query("SELECT SUM(spent_amount) FROM days_table WHERE sql_date > DATE('now','-1 month', '-1 day')")
     fun getMonthlySpentAmount(): LiveData<Double>
 }

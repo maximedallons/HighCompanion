@@ -12,7 +12,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="32dp"
         android:layout_weight="1"
         android:orientation="vertical">
         <!-- HEADER -->
@@ -20,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_margin="32dp">
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
@@ -40,13 +39,24 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/smoked_joints_fragment"
                 xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_margin="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:visibility="visible"
                 android:name="com.gami.highcompanion.views.fragments.AddSmokedJoints"/>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/spent_money_fragment"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:name="com.gami.highcompanion.views.fragments.AddSpentMoney"/>
         </RelativeLayout>
     </LinearLayout>
 

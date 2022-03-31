@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.gami.highcompanion.R
 import com.gami.highcompanion.databinding.ActivityAddBinding
 import com.gami.highcompanion.views.fragments.AddSmokedJoints
-import java.lang.reflect.Array.newInstance
+import com.gami.highcompanion.views.fragments.AddSpentMoney
 
 
 class AddActivity : AppCompatActivity() {
@@ -23,14 +23,6 @@ class AddActivity : AppCompatActivity() {
         initViewAttributes()
         switchDataTypeHandler()
         navigationHandler()
-
-        val currentFragment: Fragment? =
-            supportFragmentManager.findFragmentById(R.id.smoked_joints_fragment)
-        if (currentFragment == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.smoked_joints_fragment, AddSmokedJoints.newInstance()).commit()
-        }
-
     }
 
     private fun navigationHandler(){
@@ -61,12 +53,14 @@ class AddActivity : AppCompatActivity() {
                 binding.switchBtn.setImageResource(R.drawable.back_to_weed)
                 binding.title.text = "Transactions"
                 binding.smokedJointsFragment.visibility = View.GONE
+                binding.spentMoneyFragment.visibility = View.VISIBLE
                 flag = !flag
             }
             else if(!flag) {
                 binding.switchBtn.setImageResource(R.drawable.back_to_money)
                 binding.title.text = "Smoke a joint"
                 binding.smokedJointsFragment.visibility = View.VISIBLE
+                binding.spentMoneyFragment.visibility = View.GONE
                 flag = !flag
             }
         }

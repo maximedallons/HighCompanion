@@ -2,6 +2,7 @@ package com.gami.highcompanion.data
 
 import androidx.lifecycle.LiveData
 import com.gami.highcompanion.models.DayStats
+import com.gami.highcompanion.views.fragments.AddSpentMoney
 
 class DaysRepository {
     companion object{
@@ -20,11 +21,19 @@ class DaysRepository {
         daysDao?.addDay(day)
     }
 
+
+
     fun addSmokedJoint(smokedJoints: Double) {
         daysDao?.addSmokedJoint(smokedJoints)
     }
     fun substractSmokedJoint(smokedJoints: Double) {
         daysDao?.substractSmokedJoint(smokedJoints)
+    }
+    fun addSpentMoney(spentMoney: Double) {
+        daysDao?.addSpentMoney(spentMoney)
+    }
+    fun substractSpentMoney(spentMoney: Double) {
+        daysDao?.substractSpentMoney(spentMoney)
     }
     fun resetSmokedJoints(){
         daysDao?.resetSmokedJoints()

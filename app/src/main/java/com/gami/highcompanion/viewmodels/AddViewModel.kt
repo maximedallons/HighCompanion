@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gami.highcompanion.data.DaysRepository
 import com.gami.highcompanion.models.DayStats
+import com.gami.highcompanion.views.fragments.AddSpentMoney
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -36,6 +37,17 @@ class AddViewModel : ViewModel() {
 
     fun getDailySmokedJoints(): LiveData<Double>? {
         return repository.getDailySmokedJoints
+    }
+
+    fun addSpentMoney(spentMoney: Double) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.addSpentMoney(spentMoney)
+        }
+    }
+    fun substractSpentMoney(spentMoney: Double) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.substractSpentMoney(spentMoney)
+        }
     }
 
     fun getDayStats(): LiveData<DayStats>? {

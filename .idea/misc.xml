@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/gami2/.gradle/caches/transforms-3/fdc7a03647028e5e834c09f4fd926ed0/transformed/VerticalSeekBar-1.2.7/res/layout/layout_verticalseekbar.xml" value="0.18125" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/backspace.xml" value="0.221" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/blue_dashed_border.xml" value="0.186" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/bottom_nav_item_color.xml" value="0.1935" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/dashed_border.xml" value="0.1935" />
@@ -11,17 +12,24 @@
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/graph_bar_bg.xml" value="0.3445" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/graph_bar_fg.xml" value="0.3445" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/graph_layout_bg.xml" value="0.3445" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/green_dashed_border.xml" value="0.221" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/green_rounded_rectangle.xml" value="0.221" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/outline_add_24.xml" value="0.3445" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/outline_backspace_24.xml" value="0.221" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/outline_cached_24.xml" value="0.221" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/outline_check_circle_24.xml" value="0.221" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/outline_settings_24.xml" value="0.1935" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/outline_timeline_24.xml" value="0.3445" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/range_selector_bg.xml" value="0.1935" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/range_selector_button_color.xml" value="0.1935" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/red_rounded_rectangle.xml" value="0.221" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/drawable/unselected_menu_button.xml" value="0.114" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/layout/activity_add.xml" value="0.25" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/layout/activity_main.xml" value="0.10925925925925926" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/layout/activity_statistics.xml" value="0.22" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/layout/fragment_add_smoked_joints.xml" value="0.2" />
+        <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/layout/fragment_add_spent_money.xml" value="0.33" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/layout/layout_verticalseekbar.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/menu/bottom_nagivation_menu.xml" value="0.3625" />
         <entry key="..\:/Users/gami2/AndroidStudioProjects/HighCompanion/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3625" />

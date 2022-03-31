@@ -36,6 +36,11 @@ class StatisticsActivity : AppCompatActivity() {
         }
     }
 
+    override fun onPostResume() {
+        super.onPostResume()
+        initViewAttributes()
+    }
+
     private fun rangeSelectorHandler(){
         binding.btnDay.setOnClickListener {
             binding.btnDay.isSelected = true
